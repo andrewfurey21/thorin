@@ -1,0 +1,9 @@
+[project]
+name = "thorin"
+version = "0.1.0"
+description = "Uses the DWARF debug format to read an object file and directly compare the assembly to where it came from."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pyelftools>=0.32",
+]
