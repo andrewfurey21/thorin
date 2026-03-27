@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "Inspecting object file test.o"
+python ../thorin/inspect_binary.py  ./object.o
+
+echo "Inspecting executable test"
+python ../thorin/inspect_binary.py  ./test
+
+make
+python ../thorin/inspect_binary.py  ./debug

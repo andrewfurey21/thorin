@@ -1,26 +1,26 @@
+import argparse
 from elftools.elf.elffile import ELFFile, DWARFInfo
 
 """
+Goal: take a function name, display the function seperated line by line
+with it's generated assembly alongside it.
 
-Goal: write an alternative compiler explorer that uses the dwarf debug format.
-
-pass in a function game and get each line and what is corresponds too.
+generate a html file with lines of c code next to assembly, when assembly/c is highlighted highlight the corresponding c/assembly.
 
 """
 
 
-def process_elf(path: str):
-    with open(path, "rb") as f:
-        e: ELFFile = ELFFile(f)
-        dwarf_info: DWARFInfo = e.get_dwarf_info()
+def display_function_assembly(path: str):
+    e: ELFFile = ELFFile.load_from_path(path)
 
-        dwarf_info.get_CU_containing(refaddr)
-    #
-    #     # for section in e.iter_sections():
-    #     #     if section.name.startswith(".debug"):
-    #     #         print(section.name)
+    for i in range(100):
+        s = e.get_segment(i)
+        print(s.data())
 
 
 if __name__ == "__main__":
-    binary_path = "test"
-    code_path = "test.c"
+    arg_parser = argparse.ArgumentParser()
+    arg_parser.add_argument("binary")
+
+    args = arg_parser.parse_args()
+    display_function_assembly(args.binary)
