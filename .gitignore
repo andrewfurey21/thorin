@@ -11,3 +11,4 @@ wheels/
 
 
 example/debug
+example/*.html
