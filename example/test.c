@@ -345,6 +345,7 @@ int main() {
   test_ordered_map_search(1001);
   test_ordered_map_search(10001);
   // string tests
-  // test_strings_find("./data/names.txt");
+  test_strings_find("./data/names.txt");
+  printf("Tests succeeded");
   return 0;
 }

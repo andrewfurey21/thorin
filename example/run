@@ -1,0 +1,4 @@
+#!/bin/bash
+make
+python ../thorin/main.py --binary debug --output index.html
+
